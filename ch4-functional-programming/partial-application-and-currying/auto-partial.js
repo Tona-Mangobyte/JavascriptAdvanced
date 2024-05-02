@@ -9,9 +9,8 @@ function autoPartial(fn) {
 }
 
 function autoPartial2(fn) {
-    const slice = Array.prototype.slice;
     return function() {
-        const args = slice.call(arguments);
+        const args = Array.prototype.slice.call(arguments);
         if (args.length >= fn.length) {
             return fn(...args);
         }
